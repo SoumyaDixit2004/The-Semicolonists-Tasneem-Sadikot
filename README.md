@@ -1,154 +1,214 @@
-Abrovia
+Abrovia – Overseas Education Decision Platform
 
-Your Overseas Education Navigator
+Abrovia is an AI-powered overseas university decision-support platform designed to help engineering students make structured, data-informed decisions about studying abroad.
 
-Abrovia is an AI-powered overseas university guidance platform designed to help students make structured, data-informed decisions about studying abroad. The system integrates intelligent university recommendations, financial feasibility analysis, ROI insights, campus ecosystem evaluation, and transparent source-backed outputs into one unified decision-support platform.
+Unlike traditional ranking-based tools, Abrovia integrates academic compatibility, financial feasibility, ROI insights, and campus ecosystem intelligence into a unified analytical system.
 
-Abrovia moves beyond simple ranking tools by combining academic compatibility, cost considerations, projected career outcomes, and campus life intelligence into a structured analytical framework.
+🌟 Features
+🎓 Intelligent University Recommendations
 
-Overview
+Profile-based filtering using academic metrics and preferences
 
-Engineering students planning to study abroad often face fragmented information, unclear eligibility pathways, financial uncertainty, and limited insight into campus environments. Existing tools typically focus only on rankings or static filters. Abrovia centralizes these variables into a coherent system that reduces ambiguity and improves decision clarity.
+Dynamic institution comparison
 
-The platform leverages structured AI responses while maintaining transparency and interpretability.
+Structured selection outcomes instead of simple rankings
 
-Core Features
-University Recommendations
+💰 ROI & Financial Feasibility Analysis
 
-Profile-based filtering using academic metrics, preferences, and financial considerations.
-Dynamic institution comparison to support structured selection decisions.
+Tuition cost evaluation
 
-ROI Analysis
+Cost of living assessment
 
-Tuition evaluation combined with projected salary insights.
-Cost of living assessment integrated into financial feasibility analysis.
-Structured return on investment breakdown for long-term planning.
-Source-referenced statistical outputs where applicable.
+Projected salary insights
 
-Campus Life Insights
+Structured return-on-investment breakdown
 
-Housing and dorm references.
-Safety indicators and contextual summaries.
-Cost of living information.
-Ranking summaries.
-AI-generated campus ecosystem insights presented in structured format.
+Source-referenced statistical indicators
 
-Transparency
+🏫 Campus Life Intelligence
 
-Clear distinction between AI-generated summaries and referenced statistical data.
-Structured JSON-based outputs to ensure consistency.
-Source-aware design to maintain credibility and interpretability.
+Housing and dorm insights
 
-AI Integration
+Safety indicators
 
-Abrovia integrates Google Gemini to generate structured academic and campus insights. The system enforces strict output formatting to ensure reliable JSON-based responses rather than conversational text.
+Cost of living summaries
 
-The AI layer is used for:
+Ranking context
 
-Campus life synthesis
+AI-generated ecosystem analysis
 
-Contextual university evaluation
+🤖 Structured AI Output
 
-Structured ranking summaries
+JSON-enforced structured responses
 
-Insight generation beyond predefined datasets
+No conversational free-text outputs
 
-Architecture:
+Clean response parsing for frontend integration
 
-Frontend built using React and Vite
-Backend built using Node and Express
-Google Gemini API for AI-driven structured outputs
+🔐 Backend-Secured AI Integration
 
-The backend layer ensures secure API handling, consistent response parsing, and protection of sensitive credentials.
+Secure API key handling
 
-Technology Stack
+Controlled AI response processing
 
+Protection against credential exposure
+
+🚀 Quick Start
+Clone the Repository
+git clone https://github.com/saniyagoutam/The-Semicolonists-Tasneem-Sadikot.git
+cd The-Semicolonists-Tasneem-Sadikot
+
+Install Dependencies
 Frontend
+cd frontend
+npm install
+npm run dev
+
+Backend
+cd backend
+npm install
+node server.cjs
+
+🔧 Environment Configuration
+
+Create a .env file inside the backend directory:
+
+GEMINI_API_KEY=your_api_key_here
+PORT=5000
+
+
+Do NOT expose API keys in frontend files.
+
+🛠️ Tech Stack
+Frontend
+
 React
+
 TypeScript
+
 Vite
+
 Tailwind CSS
+
 shadcn UI
 
 Backend
+
 Node.js
+
 Express
+
 CORS
+
 Dotenv
+
 Google Generative AI SDK
 
 AI Model
+
 Gemini 1.5 Flash
 
-Project Structure
-
+🏗️ Project Structure
 abrovia/
 │
 ├── frontend/
-│ ├── src/
-│ ├── components/
-│ ├── pages/
-│ └── configuration files
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── configuration files
 │
 ├── backend/
-│ ├── server.cjs
-│ └── environment configuration
+│   ├── server.cjs
+│   └── environment configuration
 │
 └── README.md
 
-Key Features and Design Rationale
-
-Abrovia was designed to address gaps in conventional university selection platforms.
-
+🧠 Design Philosophy
 Intelligent Decision Structuring
 
-Most tools rely purely on ranking-based filters. Abrovia integrates academic fit, financial feasibility, and contextual environment factors to produce structured outcomes rather than isolated metrics.
+Most platforms rely on ranking filters. Abrovia integrates:
 
-Financial Feasibility Focus
+Academic compatibility
 
-Students frequently underestimate long-term financial impact. The platform integrates tuition, living cost indicators, and projected salary insights to provide a clearer return-on-investment perspective.
+Financial feasibility
 
-Structured AI Output
+Campus environment intelligence
 
-Instead of conversational AI responses, Abrovia enforces structured output formatting. This improves reliability, readability, and integration with the interface.
+This creates structured outcomes instead of isolated metrics.
 
-Source Awareness
+Financial Clarity
 
-Where statistical values are referenced, transparency is emphasized. The platform differentiates between generated narrative insights and referenced statistical indicators.
+Students often underestimate long-term costs.
+Abrovia integrates tuition, living expenses, and salary projections to provide realistic ROI insights.
 
-Challenges Faced and Solutions Implemented
+Structured AI Architecture
+
+AI responses are enforced in strict JSON format to:
+
+Improve reliability
+
+Enable consistent parsing
+
+Prevent malformed output
+
+Maintain frontend stability
+
+⚙️ Challenges & Solutions
 AI Response Formatting
 
-AI models often return free-text responses or include markdown formatting. This created parsing inconsistencies. The issue was resolved by enforcing strict prompt constraints and implementing response cleaning before JSON parsing.
+Problem: Free-text and markdown responses from AI
+Solution: Strict prompt constraints + response cleaning before JSON parsing
 
-API Security and CORS
+API Security & CORS
 
-Direct frontend integration with external AI services resulted in security and cross-origin restrictions. Introducing a backend layer resolved credential exposure risks and ensured stable API communication.
+Problem: Direct frontend AI integration caused exposure risks
+Solution: Introduced backend API layer for secure handling
 
-Environment Configuration Conflicts
+Environment Conflicts
 
-Managing environment variables across frontend and backend introduced configuration inconsistencies. This was addressed by clearly separating environment scopes and backend-specific credentials.
+Problem: Variable scope mismatches between frontend and backend
+Solution: Clear separation of environment configuration
 
-Response Reliability
+JSON Reliability
 
-AI outputs may occasionally produce malformed JSON. Defensive parsing and structured error handling were implemented to prevent application crashes and ensure graceful fallback behavior.
+Problem: Occasional malformed AI responses
+Solution: Defensive parsing and structured error handling
 
-Architectural Separation
+🌍 What Makes Abrovia Distinct
 
-Maintaining clean separation between UI logic and AI processing required restructuring the application architecture. The final design separates frontend presentation, backend AI handling, and structured data flow for scalability and maintainability.
+Integration of academic fit + financial feasibility + campus analysis
 
-What Makes Abrovia Distinct
+Structured AI output instead of conversational summaries
 
-Integration of academic compatibility, financial feasibility, and campus ecosystem analysis within a single framework.
+Transparency-focused design
 
-Structured AI outputs instead of conversational summaries.
+Backend-secured AI architecture
 
-Transparency-focused design emphasizing interpretability.
+Modular and scalable structure
 
-Backend-secured AI integration for reliability.
+Abrovia is positioned as a structured academic decision-support system rather than a basic university listing platform.
 
-Modular architecture suitable for scaling and future enhancement.
+🤝 Contributing
 
-Abrovia is positioned as a structured academic decision-support system rather than a simple university listing tool.
+Fork the repository
 
-Developed by Team Semicolonists
+Create your feature branch
+
+git checkout -b feature/YourFeature
+
+
+Commit your changes
+
+git commit -m "Add your feature"
+
+
+Push to the branch
+
+git push origin feature/YourFeature
+
+
+Open a Pull Request
+
+👥 Developed By
+
+Team Semicolonists
